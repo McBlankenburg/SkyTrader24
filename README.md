@@ -1,11 +1,11 @@
 # SkyTrader24
 
 SkyTrader24 is a microservices-based application built with 
-- Java
+- Java 17
 - maven
 - Spring (Boot, Cloud, Data JPA, Security)
 - Hibernate
-- PostgreSql
+- PostgreSQL
 - Apache Kafka
 - Docker
 - Kubernetes
@@ -16,7 +16,8 @@ This application is developed as part of my portfolio as a demonstration applica
 ## Directory Structure
 
 The directory structure of the project is as follows:
-```shell
+
+```yaml
 ├── microservices
 │ ├── customer # registration, authentication, and profile management.
 │ ├── notification # email, sms, pop-up notification
@@ -57,6 +58,8 @@ Make sure you have the following tools installed:
 
 ```shell
 git clone https://github.com/McBlankenburg/SkyTrader24.git
+```
+```shell
 cd SkyTrader24
 ```
 
@@ -66,6 +69,8 @@ Run the following command from the root directory of the project:
 
 ```shell
 cd microservices
+```
+```shell
 ./mvnw clean install
 ```
 This command will build all the microservices and their dependencies.
