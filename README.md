@@ -1,6 +1,15 @@
 # SkyTrader24
 
-SkyTrader24 is a microservices-based application built with Java, Spring Boot, Spring Cloud, Spring Data JPA, Spring Security, and Kafka message broker. It consists of several services, including Customer, Notification, Order, Payment, Trade, and Weather, providing a platform for trading activities. This application is developed as part of my portfolio to showcase my skills as a mid-level Java developer.
+SkyTrader24 is a microservices-based application built with 
+-Java,
+-maven
+-Spring (Boot, Cloud, Data JPA, Security)
+-Apache Kafka
+-Docker
+-Kubernetes
+
+It consists of several services, including Customer, Notification, Order, Payment, Trade, and Weather, providing a platform for trading activities. 
+This application is developed as part of my portfolio as a demonstration application.
 
 ## Directory Structure
 
@@ -36,7 +45,7 @@ To install and run the SkyTrader24 application, follow the instructions below:
 
 Make sure you have the following tools installed:
 
-- Java 17
+- JDK 17
 - Maven (optional)
 - Docker
 - Kubernetes cluster
@@ -50,7 +59,8 @@ cd SkyTrader24
 ```
 
 ### Building the Project
-To build all the projects at once from the microservices module, you can use the Maven wrapper. Run the following command from the root directory of the project:
+To build all the projects at once from the microservices module, you can use the Maven wrapper. 
+Run the following command from the root directory of the project:
 
 ```shell
 cd microservices
