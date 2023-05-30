@@ -1,0 +1,39 @@
+name: Build Check
+
+on:
+  push:
+    branches:
+      - develop
+  pull_request:
+    branches:
+      - develop
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Set up Java
+        uses: actions/setup-java@v2
+        with:
+          java-version: '17'
+
+      - name: Build project
+        run: |
+             cd microservices
+             mvn clean install
+
+      - name: Run unit tests
+        run: |
+             cd microservices
+             mvn test
+
+            # Dodaj krok, który sprawdzi wynik testów
+      - name: Check test results
+        run: |
+             cd microservices
+             mvn surefire-report:report-only
+             cat target/site/surefire-report.html
