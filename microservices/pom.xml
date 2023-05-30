@@ -4,8 +4,8 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>SkyTrader24</groupId>
-    <artifactId>SkyTrader24</artifactId>
+    <groupId>microservices</groupId>
+    <artifactId>microservices</artifactId>
     <version>1.0.0</version>
     <packaging>pom</packaging>
 
@@ -20,20 +20,29 @@
 
     <properties>
         <java.version>17</java.version>
-        <spring-boot-starter-parent.version>3.0.0</spring-boot-starter-parent.version>
+        <spring-boot-starter-parent.version>3.1.0</spring-boot-starter-parent.version>
+        <lombok.version>1.18.24</lombok.version>
     </properties>
 
     <dependencies>
         <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+            <version>${spring-boot-starter-parent.version}</version>
+        </dependency>
+
+        <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
             <optional>true</optional>
+            <version>${lombok.version}</version>
         </dependency>
 
         <!-- TESTS -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
+            <version>${spring-boot-starter-parent.version}</version>
             <scope>test</scope>
         </dependency>
     </dependencies>
@@ -43,6 +52,7 @@
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
+                <version>${spring-boot-starter-parent.version}</version>
                 <configuration>
                     <excludes>
                         <exclude>
@@ -50,6 +60,15 @@
                             <artifactId>lombok</artifactId>
                         </exclude>
                     </excludes>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.8.1</version>
+                <configuration>
+                    <source>${java.version}</source>
+                    <target>${java.version}</target>
                 </configuration>
             </plugin>
         </plugins>
