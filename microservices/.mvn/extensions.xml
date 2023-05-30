@@ -1,7 +1,0 @@
-<extensions>
-    <extension>
-        <groupId>org.apache.maven.wagon</groupId>
-        <artifactId>wagon-github</artifactId>
-        <version>0.2.1</version>
-    </extension>
-</extensions>
