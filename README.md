@@ -19,6 +19,14 @@ The directory structure of the project is as follows:
 ├── docs # Project documentation in markdown and diagrams
 ├── 
 ```
+| Microservices | 1st Stage Status | 2nd Stage Status |
+|---------------|-----------------|-----------------|
+| customer      | In Progress     |                 |
+| notification  |                 |                 |
+| order         |                 |                 |
+| payment       |                 |                 |
+| trade         |                 |                 |
+| weather       |                 |                 |
 
 ## Installation and Setup
 
