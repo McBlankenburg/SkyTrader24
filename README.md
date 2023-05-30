@@ -21,12 +21,13 @@ The directory structure of the project is as follows:
 
 ```yaml
 ├── microservices
-│ ├── customer # registration, authentication, and profile management.
-│ ├── notification # email, sms, pop-up notification
-│ ├── order # creation, modification and tracking of orders placed by customers., inventory management, order status.
-│ ├── payment # including payment gateway integration, transaction management, and handling various payment methods.
-│ ├── trade # buying and selling of financial assets. It handles order matching, trade execution, and trade history management.
-│ ├── weather # It integrates with external weather APIs to fetch real-time weather data and provides weather forecasts and current conditions.
+│   ├── customer # registration, authentication, and profile management.
+│   ├── notification # email, sms, pop-up notification
+│   ├── order # creation, modification and tracking of orders placed by customers., inventory management, order status.
+│   ├── payment # including payment gateway integration, transaction management, and handling various payment methods.
+│   ├── trade # buying and selling of financial assets. It handles order matching, trade execution, and trade history management.
+│   ├── weather # It integrates with external weather APIs to fetch real-time weather data and provides weather forecasts and current conditions.
+│
 ├── docker # Docker configuration
 ├── kubernetes # Kubernetes YAML configuration files
 ├── .github/workflows # Git Actions configuration files
