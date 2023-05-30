@@ -32,7 +32,6 @@ The directory structure of the project is as follows:
 ├── kubernetes # Kubernetes YAML configuration files
 ├── .github/workflows # Git Actions configuration files
 ├── docs # Project documentation in markdown and diagrams
-├── 
 ```
 | Microservices | 1st Stage Status | 2nd Stage Status |
 |---------------|-----------------|-----------------|
