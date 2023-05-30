@@ -5,26 +5,25 @@ on:
     branches:
       - develop
     paths-ignore:
-      - ${{ env.ignore_paths }}
+      - 'docs/**'
+      - 'docker/**'
+      - 'kubernetes/**'
+      - 'README.md'
+      - '.gitignore'
 
   pull_request:
     branches:
       - develop
     paths-ignore:
-      - ${{ env.ignore_paths }}
-
-env:
-  ignore_paths: |
-    docs/**
-    docker/**
-    kubernetes/**
-    README.md
-    .gitignore
+      - 'docs/**'
+      - 'docker/**'
+      - 'kubernetes/**'
+      - 'README.md'
+      - '.gitignore'
 
 jobs:
   build:
     runs-on: ubuntu-latest
-
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
