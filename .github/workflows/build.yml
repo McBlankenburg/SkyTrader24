@@ -1,13 +1,5 @@
 name: Build Check
 
-env:
-  ignore_paths: |
-    - 'docs/**'
-    - 'docker/**'
-    - 'kubernetes/**'
-    - 'README.md'
-    - '.gitignore'
-
 on:
   push:
     branches:
