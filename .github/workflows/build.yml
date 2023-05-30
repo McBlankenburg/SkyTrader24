@@ -13,13 +13,21 @@ on:
     branches:
       - develop
     paths-ignore:
-      - ${{ env.ignore_paths }}
+      - 'docs/**'
+      - 'docker/**'
+      - 'kubernetes/**'
+      - 'README.md'
+      - '.gitignore'
 
   pull_request:
     branches:
       - develop
     paths-ignore:
-      - ${{ env.ignore_paths }}
+      - 'docs/**'
+      - 'docker/**'
+      - 'kubernetes/**'
+      - 'README.md'
+      - '.gitignore'
 
 jobs:
   build:
