@@ -1,7 +1,7 @@
 # SkyTrader24
 
 SkyTrader24 is a microservices-based application built with
-<font color="red">
+
 - Java 17
 - maven
 - Spring (Boot, Cloud, Data JPA, Security)
@@ -10,7 +10,6 @@ SkyTrader24 is a microservices-based application built with
 - Apache Kafka
 - Docker
 - Kubernetes
-</font>
 
 It consists of several services, including Customer, Notification, Order, Payment, Trade, and Weather, providing a platform for trading activities. 
 This application is developed as part of my portfolio as a demonstration application.
