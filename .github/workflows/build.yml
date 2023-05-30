@@ -1,12 +1,25 @@
 name: Build Check
 
+env:
+  ignore_paths: |
+    - 'docs/**'
+    - 'docker/**'
+    - 'kubernetes/**'
+    - 'README.md'
+    - '.gitignore'
+
 on:
   push:
     branches:
       - develop
+    paths-ignore:
+      - ${{ env.ignore_paths }}
+
   pull_request:
     branches:
       - develop
+    paths-ignore:
+      - ${{ env.ignore_paths }}
 
 jobs:
   build:
