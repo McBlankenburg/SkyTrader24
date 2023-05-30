@@ -31,7 +31,6 @@ jobs:
              cd microservices
              mvn test
 
-            # Dodaj krok, który sprawdzi wynik testów
       - name: Check test results
         run: |
              cd microservices
