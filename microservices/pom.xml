@@ -16,7 +16,6 @@
     <packaging>pom</packaging>
 
     <modules>
-        <module>eureka-discovery</module>
         <module>identity-management</module>
         <module>weather-data-collector</module>
         <module>stock-inventory</module>
@@ -28,6 +27,7 @@
 
     <properties>
         <java.version>17</java.version>
+        <spring-cloud.version>3.1.0</spring-cloud.version>
         <maven.compiler.source>${java.version}</maven.compiler.source>
         <maven.compiler.target>${java.version}</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
