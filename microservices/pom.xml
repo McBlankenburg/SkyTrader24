@@ -17,6 +17,14 @@
 
     <modules>
         <module>eureka-discovery</module>
+        <module>identity-management</module>
+        <module>weather-data-collector</module>
+        <module>stock-inventory</module>
+        <module>shopping-cart</module>
+        <module>payments</module>
+        <module>orders-management</module>
+        <module>orders-delivery</module>
+        <module>notifications</module>
     </modules>
 
     <properties>
