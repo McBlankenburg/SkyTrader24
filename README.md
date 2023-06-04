@@ -1,45 +1,45 @@
 # SkyTrader24
-
 SkyTrader24 is a microservices-based application built with
 
 - Java 17
 - maven
 - Spring (Boot, Cloud, Data JPA, Security)
 - Hibernate
-- PostgreSQL
 - Apache Kafka
 - Docker
 - Kubernetes
 
-It consists of several services, including Customer, Notification, Order, Payment, Trade, and Weather, providing a platform for trading activities. 
-This application is developed as part of my portfolio as a demonstration application.
-
 ## Directory Structure
-
 The directory structure of the project is as follows:
 
 ```yaml
 ├── microservices
-│   ├── customer # registration, authentication, and profile management.
-│   ├── notification # email, sms, pop-up notification
-│   ├── order # creation, modification and tracking of orders placed by customers., inventory management, order status.
-│   ├── payment # including payment gateway integration, transaction management, and handling various payment methods.
-│   ├── trade # buying and selling of financial assets. It handles order matching, trade execution, and trade history management.
-│   ├── weather # It integrates with external weather APIs to fetch real-time weather data and provides weather forecasts and current conditions.
+│     ├── eureka-discovery #
+│     ├── identity-management #registration, authorization, authentication, and profile management
+│     ├── weather-data-collector #collecting data from external weather APIs, data processing and distribution
+│     ├── stock-inventory #sharing of stock and price data
+│     ├── shopping-cart #adding, deleting and saving a shopping cart assigned to a user profile
+│     ├── payments #integration with external payment APIs
+│     ├── orders-and-delivery-management #collecting information about orders and delivery
+│     ├── notifications #sending email notifications
 │
+├── .github
+│     ├── workflows # Git Actions configuration files
+
 ├── docker # Docker configuration
 ├── kubernetes # Kubernetes YAML configuration files
-├── .github/workflows # Git Actions configuration files
 ├── docs # Project documentation in markdown and diagrams
 ```
-| Microservices | 1st Stage Status | 2nd Stage Status |
-|---------------|-----------------|-----------------|
-| customer      | In Progress     |                 |
-| notification  |                 |                 |
-| order         |                 |                 |
-| payment       |                 |                 |
-| trade         |                 |                 |
-| weather       |                 |                 |
+| Microservices                  | 1st Stage Status | 2nd Stage Status |
+|--------------------------------|-----------------|------------------|
+| eureka-discovery               | In Progress     |                  |
+| identity-management            | In Progress     |                  |
+| weather-data-collector         | In Progress     |                  |
+| stock-inventory                |                 |                  |
+| shopping-cart                  |                 |                  |
+| payments                       |                 |                  |
+| orders-and-delivery-management |                 |                  |
+| notifications                  |                 |                  |
 
 ## Installation and Setup
 
