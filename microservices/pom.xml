@@ -22,8 +22,7 @@
         <module>stock-inventory</module>
         <module>shopping-cart</module>
         <module>payments</module>
-        <module>orders-management</module>
-        <module>orders-delivery</module>
+        <module>orders-and-delivery-management</module>
         <module>notifications</module>
     </modules>
 
