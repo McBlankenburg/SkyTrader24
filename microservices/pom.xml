@@ -16,7 +16,6 @@
     <packaging>pom</packaging>
 
     <modules>
-        <module>eureka-discovery</module>
         <module>identity-management</module>
         <module>weather-data-collector</module>
         <module>stock-inventory</module>
