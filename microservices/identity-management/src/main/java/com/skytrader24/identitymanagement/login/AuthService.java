@@ -5,10 +5,10 @@ import com.skytrader24.identitymanagement.entity.UserEntity;
 import org.springframework.stereotype.Service;
 
 @Service
-public class AuthenticationService {
+public class AuthService {
     private final UserRepository userRepository;
 
-    public AuthenticationService(UserRepository userRepository) {
+    public AuthService(UserRepository userRepository) {
         this.userRepository = userRepository;
     }
 
