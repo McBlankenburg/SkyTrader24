@@ -1,30 +1,33 @@
 package com.skytrader24.identitymanagement.login;
 
 import com.skytrader24.identitymanagement.UserRepository;
-import com.skytrader24.identitymanagement.entity.UserEntity;
 import org.springframework.stereotype.Service;
+import org.springframework.security.authentication.AuthenticationManager;
+import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.crypto.password.PasswordEncoder;
 
 @Service
 public class AuthService {
+    private final AuthenticationManager authenticationManager;
     private final UserRepository userRepository;
+    private final JwtTokenProvider tokenProvider;
+    private final PasswordEncoder passwordEncoder;
 
-    public AuthService(UserRepository userRepository) {
+    public AuthService(AuthenticationManager authenticationManager, UserRepository userRepository, JwtTokenProvider tokenProvider, PasswordEncoder passwordEncoder) {
+        this.authenticationManager = authenticationManager;
         this.userRepository = userRepository;
+        this.tokenProvider = tokenProvider;
+        this.passwordEncoder = passwordEncoder;
     }
 
-    public String generateToken(CredentialsDTO loginRequest) {
-        String username = loginRequest.username();
-        String password = loginRequest.password();
+    public JwtAuthenticationResponse signIn(LoginRequest loginRequest) {
+        Authentication authentication = authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(loginRequest.username(), loginRequest.password()));
 
-        boolean isValidUser = userRepository.findByUsernameAndPassword(username, password)
-                .filter(UserEntity::isActive)
-                .isPresent();
+        SecurityContextHolder.getContext().setAuthentication(authentication);
+        String token = tokenProvider.generateToken(authentication);
 
-
-        if(isValidUser){
-            //TODO: generateJwtToken
-            return "MOCK TOKEN JWT";
-        }
-        return "NOT IMPLEMENTED YET, GLOBALHANDLER";
+        return new JwtAuthenticationResponse(token);
     }
 }
