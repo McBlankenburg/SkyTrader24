@@ -1,4 +1,7 @@
 # SkyTrader24
+
+![Infrastruktura](./infrastructure.jpg)
+
 SkyTrader24 is a microservices-based application built with
 
 - Java 17
@@ -30,6 +33,10 @@ The directory structure of the project is as follows:
 ├── kubernetes # Kubernetes YAML configuration files
 ├── docs # Project documentation in markdown and diagrams
 ```
+
+
+
+
 | Microservices                  | 1st Stage Status | 2nd Stage Status |
 |--------------------------------|-----------------|------------------|
 | eureka-discovery               | In Progress     |                  |
