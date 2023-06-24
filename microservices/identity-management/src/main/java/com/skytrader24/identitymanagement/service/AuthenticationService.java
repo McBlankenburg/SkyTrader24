@@ -1,7 +1,8 @@
-package com.skytrader24.identitymanagement.login;
+package com.skytrader24.identitymanagement.service;
 
-import com.skytrader24.identitymanagement.UserRepository;
-import com.skytrader24.identitymanagement.UserEntity;
+import com.skytrader24.identitymanagement.model.CredentialsDTO;
+import com.skytrader24.identitymanagement.repository.UserRepository;
+import com.skytrader24.identitymanagement.model.UserEntity;
 import org.springframework.stereotype.Service;
 
 @Service

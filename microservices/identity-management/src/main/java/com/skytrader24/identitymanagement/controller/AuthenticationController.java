@@ -1,5 +1,7 @@
-package com.skytrader24.identitymanagement.login;
+package com.skytrader24.identitymanagement.controller;
 
+import com.skytrader24.identitymanagement.service.AuthenticationService;
+import com.skytrader24.identitymanagement.model.CredentialsDTO;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;

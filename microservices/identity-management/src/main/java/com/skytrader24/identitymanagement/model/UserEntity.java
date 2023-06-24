@@ -1,14 +1,14 @@
-package com.skytrader24.identitymanagement;
+package com.skytrader24.identitymanagement.model;
 
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
-
-import java.time.LocalDate;
 
 @Entity
 @Table(name = "users")
 @NoArgsConstructor
+@AllArgsConstructor
 @Getter
 public class UserEntity {
     @Id
@@ -16,9 +16,7 @@ public class UserEntity {
     private long id;
     private String email;
     private String password;
-    private UserRole userRole;
+    private UserRole role;
     private boolean isActive;
     private boolean isBlocked;
-    private LocalDate creationDate;
-    private LocalDate lastLoggedDate;
 }
