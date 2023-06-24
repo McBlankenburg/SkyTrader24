@@ -14,10 +14,10 @@ public class AuthenticationService {
     }
 
     public String generateToken(CredentialsDTO loginRequest) {
-        String username = loginRequest.username();
+        String email = loginRequest.email();
         String password = loginRequest.password();
 
-        boolean isValidUser = userRepository.findByUsernameAndPassword(username, password)
+        boolean isValidUser = userRepository.findByEmailAndPassword(email, password)
                 .filter(UserEntity::isActive)
                 .isPresent();
 
