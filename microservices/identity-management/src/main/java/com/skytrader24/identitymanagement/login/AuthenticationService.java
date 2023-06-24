@@ -1,7 +1,7 @@
 package com.skytrader24.identitymanagement.login;
 
 import com.skytrader24.identitymanagement.UserRepository;
-import com.skytrader24.identitymanagement.entity.UserEntity;
+import com.skytrader24.identitymanagement.UserEntity;
 import org.springframework.stereotype.Service;
 
 @Service
