@@ -9,7 +9,7 @@
         <version>0.0.1</version>
     </parent>
 
-    <artifactId>identity-management</artifactId>
+    <artifactId>identity</artifactId>
 
     <properties>
         <maven.compiler.source>17</maven.compiler.source>

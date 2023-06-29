@@ -1,6 +1,6 @@
-package com.skytrader24.identitymanagement.repository;
+package com.skytrader24.identity.repository;
 
-import com.skytrader24.identitymanagement.model.UserEntity;
+import com.skytrader24.identity.model.UserEntity;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

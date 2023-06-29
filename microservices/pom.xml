@@ -16,7 +16,7 @@
     <packaging>pom</packaging>
 
     <modules>
-        <module>identity-management</module>
+        <module>identity</module>
         <module>weather-data-collector</module>
         <module>stock-inventory</module>
         <module>shopping-cart</module>

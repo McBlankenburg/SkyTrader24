@@ -1,4 +1,4 @@
-package com.skytrader24.identitymanagement.model;
+package com.skytrader24.identity.model;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
