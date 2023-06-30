@@ -1,6 +1,5 @@
-package com.skytrader24.identity.model;
+package com.skytrader24.identity;
 
-import com.skytrader24.identity.UserEntity;
 import org.junit.jupiter.api.Test;
 
 import java.lang.reflect.Constructor;
