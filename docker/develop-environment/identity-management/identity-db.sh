@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Nazwa kontenera
-CONTAINER_NAME="identity-management-dev-db"
+CONTAINER_NAME="identity-dev-db"
 
 # Sprawdzenie, czy kontener już istnieje
 if docker ps -a --format "{{.Names}}" | grep -q "^$CONTAINER_NAME$"; then
@@ -15,7 +15,7 @@ docker run -d \
 --name $CONTAINER_NAME \
 -e POSTGRES_USER=$SKYTRADER24_DEV_USERNAME \
 -e POSTGRES_PASSWORD=$SKYTRADER24_DEV_PASSWORD \
--e POSTGRES_DB=identity-management-dev-db \
+-e POSTGRES_DB=identity-dev-db \
 -v $PWD/src/main/resources/db/:/docker-entrypoint-initdb.d \
 -p 5432:5432 \
 postgres
