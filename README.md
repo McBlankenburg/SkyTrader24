@@ -39,9 +39,9 @@ The directory structure of the project is as follows:
 
 | Microservices                  | 1st Stage Status | 2nd Stage Status |
 |--------------------------------|-----------------|------------------|
-| eureka-discovery               | In Progress     |                  |
+| eureka-discovery               |                 |                  |
 | identity-management            | In Progress     |                  |
-| weather-data-collector         | In Progress     |                  |
+| weather-data-collector         |                 |                  |
 | stock-inventory                |                 |                  |
 | shopping-cart                  |                 |                  |
 | payments                       |                 |                  |
