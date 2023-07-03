@@ -79,7 +79,7 @@ Run the following command from the root directory of the project:
 cd microservices
 ```
 ```shell
-./mvnw clean install
+mvn clean install -T 1C
 ```
 This command will build all the microservices and their dependencies.
 
