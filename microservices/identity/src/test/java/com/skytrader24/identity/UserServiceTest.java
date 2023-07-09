@@ -31,9 +31,10 @@ class UserServiceTest {
 
         var request = new RegisterNewUserDTO(email, username, password);
 
+        long assignedId = 1L;
         given(userRepository.createUser(email, username, password))
                                         .willReturn(Optional.of(new UserEntity.UserEntityBuilder()
-                                        .id(1L) //random value
+                                        .id(assignedId) //random value
                                         .username(request.username())
                                         .build()));
 
@@ -43,7 +44,7 @@ class UserServiceTest {
         // Then
         assertAll("Response fields should be valid",
                 () -> assertThat(response).isNotNull(),
-                () -> assertThat(response.id()).isEqualTo(1L),
+                () -> assertThat(response.id()).isEqualTo(assignedId),
                 () -> assertThat(response.username()).isEqualTo(username)
         );
     }
