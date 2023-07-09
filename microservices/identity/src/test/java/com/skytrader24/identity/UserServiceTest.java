@@ -18,23 +18,23 @@ class UserServiceTest {
 
     @Mock
     private UserRepository userRepository;
-
     @InjectMocks
     private UserService userService;
+
+    private final String VALID_EMAIL = "Jan.Kowalski@example.com";
+    private final String VALID_USERNAME = "Testovirus123";
+    private final String VALID_PASSWORD = "pass123456%";
+    private final Long VALID_ID = 1L;
+
 
     @Test
     void shouldRegisterNewUserWhenValidRegisterNewUserDTO(){
         // Given
-        String email = "john.Smith@example.com";
-        String username = "testovirus";
-        String password = "pass123456";
+        var request = new RegisterNewUserDTO(VALID_EMAIL, VALID_USERNAME, VALID_PASSWORD);
 
-        var request = new RegisterNewUserDTO(email, username, password);
-
-        long assignedId = 1L;
-        given(userRepository.createUser(email, username, password))
+        given(userRepository.createUser(request.email(), request.username(), request.password()))
                                         .willReturn(Optional.of(new UserEntity.UserEntityBuilder()
-                                        .id(assignedId) //random value
+                                        .id(VALID_ID)
                                         .username(request.username())
                                         .build()));
 
@@ -44,14 +44,16 @@ class UserServiceTest {
         // Then
         assertAll("Response fields should be valid",
                 () -> assertThat(response).isNotNull(),
-                () -> assertThat(response.id()).isEqualTo(assignedId),
-                () -> assertThat(response.username()).isEqualTo(username)
+                () -> assertThat(response.id()).isEqualTo(VALID_ID),
+                () -> assertThat(response.username()).isEqualTo(request.username())
         );
     }
 
     @Test
     void shouldNotRegisterNewUserWhenUsernameExistInRepository() {
-        //TODO
+
+
+
     }
 
     @Test
