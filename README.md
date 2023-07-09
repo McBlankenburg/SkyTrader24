@@ -39,9 +39,9 @@ The directory structure of the project is as follows:
 
 | Microservices                  | 1st Stage Status | 2nd Stage Status |
 |--------------------------------|-----------------|------------------|
-| eureka-discovery               | In Progress     |                  |
+| eureka-discovery               |                 |                  |
 | identity-management            | In Progress     |                  |
-| weather-data-collector         | In Progress     |                  |
+| weather-data-collector         |                 |                  |
 | stock-inventory                |                 |                  |
 | shopping-cart                  |                 |                  |
 | payments                       |                 |                  |
@@ -79,7 +79,7 @@ Run the following command from the root directory of the project:
 cd microservices
 ```
 ```shell
-./mvnw clean install
+mvn clean install -T 1C
 ```
 This command will build all the microservices and their dependencies.
 
