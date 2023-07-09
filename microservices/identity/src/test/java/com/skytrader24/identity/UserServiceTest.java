@@ -7,6 +7,7 @@ import org.mockito.Mockito;
 import java.util.Optional;
 
 import static org.assertj.core.api.Assertions.assertThat;
+import static org.junit.jupiter.api.Assertions.assertAll;
 import static org.mockito.BDDMockito.given;
 
 class UserServiceTest {
@@ -28,7 +29,11 @@ class UserServiceTest {
         CreatedUserDto response = userService.registerNewUser(request);
 
         // Then
-        assertThat(response).isNotNull();
+        assertAll("Response fields should be valid",
+                () -> assertThat(response).isNotNull(),
+                () -> assertThat(response.id()).isEqualTo(randomId),
+                () -> assertThat(response.username()).isEqualTo(randomUsername)
+        );
     }
 
     @Test
