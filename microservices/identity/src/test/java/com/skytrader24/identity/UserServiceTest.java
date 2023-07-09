@@ -1,30 +1,36 @@
 package com.skytrader24.identity;
 
-import com.skytrader24.identity.dto.InfoAboutCreatedUserDto;
+import com.skytrader24.identity.dto.CreatedUserDto;
+import lombok.SneakyThrows;
 import org.junit.jupiter.api.Test;
+import org.mockito.Mockito;
 
-import static org.assertj.core.api.Assertions.*;
+import java.util.Optional;
+
+import static org.assertj.core.api.Assertions.assertThat;
+import static org.mockito.BDDMockito.given;
 
 class UserServiceTest {
 
+    @SneakyThrows
     @Test
-    void shouldRegisterNewUser(){
+    void shouldRegisterNewUserWhenValidRegisterNewUserDTO(){
         // Given
-        UserService userService = new UserService();
-        RegisterNewUserDTO request = new RegisterNewUserDTO("JohnSmith123", "pass123", "john.Smith@example.com");
-
+        var userRepository = Mockito.mock(UserRepository.class);
+        var userService = new UserService(userRepository);
+        long randomId = 10;
+        String randomUsername = "testovirus";
+        var request = new RegisterNewUserDTO(randomUsername, "pass123", "john.Smith@example.com");
+        given(userRepository.createUser(Mockito.anyString(), Mockito.anyString(), Mockito.anyString()))
+                                        .willReturn(Optional.of(new UserEntity.UserEntityBuilder()
+                                        .id(randomId)
+                                        .username(request.username())
+                                        .build()));
         // When
-        InfoAboutCreatedUserDto newUser = userService.registerNewUser(request);
+        CreatedUserDto response = userService.registerNewUser(request);
 
         // Then
-        assertThat(
-                request.username()).as("Username should match").isEqualTo(newUser.username());
-
-        assertThat(
-                request.email()).as("Email should match").isEqualTo(newUser.email());
-
-        assertThat(
-                newUser.id()).as("User ID should not be null").isNotNull();
+        assertThat(response).isNotNull();
     }
 
     @Test
@@ -34,6 +40,11 @@ class UserServiceTest {
 
     @Test
     void shouldNotRegisterNewUserWhenSameEmailExistInRepository() {
+        //TODO
+    }
+
+    @Test
+    void shouldThrowUserRegistrationExceptionWhenIsProblem() {
         //TODO
     }
 

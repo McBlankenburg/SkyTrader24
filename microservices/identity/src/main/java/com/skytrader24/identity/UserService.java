@@ -1,15 +1,20 @@
 package com.skytrader24.identity;
 
-import com.skytrader24.identity.dto.InfoAboutCreatedUserDto;
+import com.skytrader24.identity.dto.CreatedUserDto;
 import org.springframework.stereotype.Service;
 
 @Service
 public class UserService {
 
-    public InfoAboutCreatedUserDto registerNewUser(RegisterNewUserDTO request) {
+    private final UserRepository userRepository;
 
+    public UserService(UserRepository userRepository) {
+        this.userRepository = userRepository;
+    }
 
-
-        return null;
+    public CreatedUserDto registerNewUser(RegisterNewUserDTO request) {
+        return userRepository.createUser(request.username(), request.password(), request.email())
+                .map(userEntity -> new CreatedUserDto(userEntity.getId(), userEntity.getUsername()))
+                .orElseThrow(() -> new UserRegistrationException("User has not been created"));
     }
 }
