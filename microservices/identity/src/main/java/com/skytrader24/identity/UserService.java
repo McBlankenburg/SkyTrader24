@@ -13,7 +13,7 @@ public class UserService {
     }
 
     public CreatedUserDto registerNewUser(RegisterNewUserDTO request) {
-        return userRepository.createUser(request.username(), request.password(), request.email())
+        return userRepository.createUser(request.email(), request.username(), request.password())
                 .map(userEntity -> new CreatedUserDto(userEntity.getId(), userEntity.getUsername()))
                 .orElseThrow(() -> new UserRegistrationException("User has not been created"));
     }
