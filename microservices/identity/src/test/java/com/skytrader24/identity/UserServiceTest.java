@@ -1,7 +1,6 @@
 package com.skytrader24.identity;
 
 import com.skytrader24.identity.dto.CreatedUserDto;
-import lombok.SneakyThrows;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
 
@@ -12,7 +11,6 @@ import static org.mockito.BDDMockito.given;
 
 class UserServiceTest {
 
-    @SneakyThrows
     @Test
     void shouldRegisterNewUserWhenValidRegisterNewUserDTO(){
         // Given
