@@ -1,6 +1,9 @@
-package com.skytrader24.identity;
+package com.skytrader24.identity.service;
 
+import com.skytrader24.identity.repository.UserRepository;
 import com.skytrader24.identity.dto.CreatedUserDto;
+import com.skytrader24.identity.dto.RegisterNewUserDTO;
+import com.skytrader24.identity.exception.UserRegistrationException;
 import org.springframework.stereotype.Service;
 
 @Service

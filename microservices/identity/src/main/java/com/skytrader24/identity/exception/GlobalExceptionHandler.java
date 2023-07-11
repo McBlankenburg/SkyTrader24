@@ -1,4 +1,4 @@
-package com.skytrader24.identity;
+package com.skytrader24.identity.exception;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

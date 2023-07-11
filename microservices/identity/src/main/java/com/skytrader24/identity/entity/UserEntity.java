@@ -1,5 +1,6 @@
-package com.skytrader24.identity;
+package com.skytrader24.identity.entity;
 
+import com.skytrader24.identity.entity.model.UserRole;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;

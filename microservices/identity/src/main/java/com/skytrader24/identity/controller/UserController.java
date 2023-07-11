@@ -1,6 +1,8 @@
-package com.skytrader24.identity;
+package com.skytrader24.identity.controller;
 
 
+import com.skytrader24.identity.dto.RegisterNewUserDTO;
+import com.skytrader24.identity.service.UserService;
 import com.skytrader24.identity.dto.CreatedUserDto;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;

@@ -1,4 +1,4 @@
-package com.skytrader24.identity;
+package com.skytrader24.identity.entity.model;
 
 public enum UserRole {
     CUSTOMER,
